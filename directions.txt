@@ -41,6 +41,14 @@ To start eth:
 
 eth -i -v 8 -j
 
+To set coinbase:
+
+javascript console:
+web3.miner.setEtherbase(web3.eth.accounts[0])
+
+command line:
+$eth --address <your address goes here>
+
 to start ethminers:
 
 try --opencl-platform 'x' if hashrate problems occur use with device
