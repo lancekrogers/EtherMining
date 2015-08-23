@@ -1,0 +1,50 @@
+Install ubuntu 15.04 distribution.
+
+sudo apt-get upgrade and update.
+
+sudo apt-get install openssh-server
+
+Set up ssh server to enable access.
+
+Install the following:
+
+http://developer.amd.com/tools-and-sdks/opencl-zone/amd-accelerated-parallel-processing
+
+http://developer.amd.com/tools-and-sdks/graphics-development/display-library-adl-sdk/
+
+unzip the files to /opt
+
+
+./AMD-APP-SDK-v2.9-1.599.381-GA-linux64.sh
+ln -s /opt/AMDAPPSDK-2.9-1 /opt/AMDAPP
+ln -s /opt/AMDAPP/include/CL /usr/include
+ln -s /opt/AMDAPP/lib/x86_64/* /usr/lib/
+
+replace current radeon  driver with fglrx
+
+set software and updates -- additional drivers to fglrx for gaphics cards
+
+sudo apt-get install fglrx-updates (or maybe fglrx)
+
+sudo aticonfig --adapter=all --initial
+sudo aticonfig --list-adapters 
+
+To install cpp-ethereum:
+
+sudo add-apt-repository -y ppa:ethereum/ethereum-qt
+sudo add-apt-repository -y ppa:ethereum/ethereum
+sudo add-apt-repository -y ppa:ethereum/ethereum-dev
+
+apt-get install cpp-ethereum
+
+To start eth:
+
+eth -i -v 8 -j
+
+to start ethminers:
+
+export GPU_MAX_ALLOC_PERCENT=95
+ethminer —opencl-device 0 -G
+
+export GPU_MAX_ALLOC_PERCENT=95
+ethminer —opencl-device 1 -G
