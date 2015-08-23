@@ -43,6 +43,8 @@ eth -i -v 8 -j
 
 to start ethminers:
 
+try --opencl-platform 'x' if hashrate problems occur use with device
+
 export GPU_MAX_ALLOC_PERCENT=95
 ethminer —opencl-device 0 -G
 
