@@ -58,3 +58,9 @@ ethminer —opencl-device 0 -G
 
 export GPU_MAX_ALLOC_PERCENT=95
 ethminer —opencl-device 1 -G
+
+if you have problems registering both gpus with opencl:
+
+export GPU_MAX_ALLOC_PERCENT=95
+aticonfig -f --adapter=all —initial
+ethminer -G -t 2
